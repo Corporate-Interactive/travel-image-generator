@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useMemo, useRef, useState, startTransition } from 'react';
-import { useActionState } from 'react';
-import { downloadImageAndUpdateCsv } from '../actions';
+import { useEffect, useMemo, useRef, useState, startTransition } from "react";
+import { useActionState } from "react";
+import { downloadImageAndUpdateCsv } from "../actions";
 
 type LocationRow = {
   city: string;
@@ -26,7 +26,7 @@ type Props = {
 };
 
 type ActionState = {
-  status: 'idle' | 'success' | 'error';
+  status: "idle" | "success" | "error";
   message?: string;
   filename?: string;
 };
@@ -39,22 +39,22 @@ export default function ImagePicker({ locations }: Props) {
   const [refreshing, setRefreshing] = useState(false);
   const [pageNum, setPageNum] = useState(1);
   const seenIdsRef = useRef<Set<string>>(new Set());
-  const [source, setSource] = useState<'pixabay' | 'unsplash' | 'pexels'>(
-    'pixabay'
+  const [source, setSource] = useState<"pixabay" | "unsplash" | "pexels">(
+    "pixabay"
   );
 
   const [actionState, formAction, isPending] = useActionState<
     ActionState,
     FormData
-  >(downloadImageAndUpdateCsv, { status: 'idle' });
+  >(downloadImageAndUpdateCsv, { status: "idle" });
 
   const selectedLocation = locations[locationIndex];
   const isDone = !selectedLocation;
 
   const query = useMemo(() => {
-    if (!selectedLocation) return '';
-    const city = selectedLocation.city ?? '';
-    const country = selectedLocation.country ?? '';
+    if (!selectedLocation) return "";
+    const city = selectedLocation.city ?? "";
+    const country = selectedLocation.country ?? "";
     return `${city} ${country}`.trim();
   }, [selectedLocation]);
 
@@ -78,13 +78,13 @@ export default function ImagePicker({ locations }: Props) {
         let attempts = 0;
         const currentSeen = new Set<string>(seenIdsRef.current);
         while (collected.length < 6 && attempts < 5) {
-          const url = new URL('/api/search', window.location.origin);
-          url.searchParams.set('q', query);
-          url.searchParams.set('per_page', '18');
-          url.searchParams.set('page', String(page));
-          url.searchParams.set('source', source);
+          const url = new URL("/api/search", window.location.origin);
+          url.searchParams.set("q", query);
+          url.searchParams.set("per_page", "18");
+          url.searchParams.set("page", String(page));
+          url.searchParams.set("source", source);
           const res = await fetch(url.toString());
-          if (!res.ok) throw new Error('Search failed');
+          if (!res.ok) throw new Error("Search failed");
           const data = await res.json();
           const hits: PixabayHit[] = Array.isArray(data?.hits) ? data.hits : [];
           for (const h of hits) {
@@ -126,7 +126,7 @@ export default function ImagePicker({ locations }: Props) {
   }
 
   useEffect(() => {
-    if (actionState.status === 'success') {
+    if (actionState.status === "success") {
       goNext();
     }
   }, [actionState.status]);
@@ -135,10 +135,10 @@ export default function ImagePicker({ locations }: Props) {
     if (!selectedLocation || isPending) return;
     setSelectedImage(img);
     const fd = new FormData();
-    fd.set('city', selectedLocation.city);
-    fd.set('country', selectedLocation.country);
-    fd.set('imageId', String(img.id));
-    fd.set('imageUrl', img.largeImageURL || img.webformatURL);
+    fd.set("city", selectedLocation.city);
+    fd.set("country", selectedLocation.country);
+    fd.set("imageId", String(img.id));
+    fd.set("imageUrl", img.largeImageURL || img.webformatURL);
     startTransition(() => {
       formAction(fd);
     });
@@ -149,7 +149,6 @@ export default function ImagePicker({ locations }: Props) {
     setRefreshing(true);
     setPageNum((p) => p + 1);
   }
-
   if (isDone) {
     return (
       <div className="w-full max-w-5xl mx-auto flex flex-col items-center gap-4 py-12 text-center">
@@ -186,7 +185,7 @@ export default function ImagePicker({ locations }: Props) {
               value={source}
               disabled={loading || refreshing || isPending}
               onChange={(e) =>
-                setSource(e.target.value as 'pixabay' | 'unsplash' | 'pexels')
+                setSource(e.target.value as "pixabay" | "unsplash" | "pexels")
               }
               className="bg-transparent border border-black/10 dark:border-white/10 rounded px-2 py-1 text-sm hover:bg-black/5 dark:hover:bg-white/5"
             >
@@ -207,7 +206,7 @@ export default function ImagePicker({ locations }: Props) {
             className="rounded border border-black/10 dark:border-white/10 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/5 disabled:opacity-50"
             title="Show more options"
           >
-            {refreshing ? 'Refreshing…' : 'Refresh'}
+            {refreshing ? "Refreshing…" : "Refresh"}
           </button>
         </div>
       </div>
@@ -223,8 +222,8 @@ export default function ImagePicker({ locations }: Props) {
               disabled={isPending}
               className={`group relative rounded-lg overflow-hidden border transition duration-200 ease-out hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 ${
                 isSelected
-                  ? 'border-foreground ring-2 ring-foreground/40'
-                  : 'border-black/10 dark:border-white/10'
+                  ? "border-foreground ring-2 ring-foreground/40"
+                  : "border-black/10 dark:border-white/10"
               }`}
             >
               <img
@@ -246,9 +245,9 @@ export default function ImagePicker({ locations }: Props) {
       </div>
 
       <div className="flex items-center justify-between">
-        {actionState.status === 'error' ? (
+        {actionState.status === "error" ? (
           <span className="text-sm text-red-600">{actionState.message}</span>
-        ) : actionState.status === 'success' && actionState.filename ? (
+        ) : actionState.status === "success" && actionState.filename ? (
           <span className="text-sm">
             Saved as /downloads/{actionState.filename}
           </span>

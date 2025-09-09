@@ -1,16 +1,16 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
-    const q = searchParams.get('q') || 'london united kingdom';
-    const perPage = Math.min(Number(searchParams.get('per_page') || 12), 50);
-    const page = Math.max(Number(searchParams.get('page') || 1), 1);
-    const source = (searchParams.get('source') || 'pixabay').toLowerCase();
+    const q = searchParams.get("q") || "london united kingdom";
+    const perPage = Math.min(Number(searchParams.get("per_page") || 12), 50);
+    const page = Math.max(Number(searchParams.get("page") || 1), 1);
+    const source = (searchParams.get("source") || "pixabay").toLowerCase();
 
-    if (source === 'unsplash') {
+    if (source === "unsplash") {
       type UnsplashPhoto = {
         id: string;
         alt_description?: string;
@@ -30,27 +30,27 @@ export async function GET(req: NextRequest) {
       const keyToUse = accessKey || fallbackAccessKey;
       if (!keyToUse) {
         return NextResponse.json(
-          { error: 'Unsplash access key not configured' },
+          { error: "Unsplash access key not configured" },
           { status: 500 }
         );
       }
-      const apiUrl = new URL('https://api.unsplash.com/search/photos');
-      apiUrl.searchParams.set('query', `destination+${q}`);
-      apiUrl.searchParams.set('page', String(page));
-      apiUrl.searchParams.set('per_page', String(perPage));
-      apiUrl.searchParams.set('orientation', 'landscape');
-      apiUrl.searchParams.set('content_filter', 'high');
+      const apiUrl = new URL("https://api.unsplash.com/search/photos");
+      apiUrl.searchParams.set("query", `destination+${q}`);
+      apiUrl.searchParams.set("page", String(page));
+      apiUrl.searchParams.set("per_page", String(perPage));
+      apiUrl.searchParams.set("orientation", "landscape");
+      apiUrl.searchParams.set("content_filter", "high");
 
       const res = await fetch(apiUrl.toString(), {
         headers: {
           Authorization: `Client-ID ${keyToUse}`,
-          'Accept-Version': 'v1',
+          "Accept-Version": "v1",
         },
         next: { revalidate: 0 },
       });
       if (!res.ok) {
         return NextResponse.json(
-          { error: 'Failed to fetch from Unsplash' },
+          { error: "Failed to fetch from Unsplash" },
           { status: 502 }
         );
       }
@@ -60,7 +60,7 @@ export async function GET(req: NextRequest) {
         : [];
       const hits = results.map((r) => ({
         id: String(r.id),
-        tags: r.alt_description || r.description || 'photo',
+        tags: r.alt_description || r.description || "photo",
         previewURL: r.urls?.thumb,
         webformatURL: r.urls?.small,
         largeImageURL: r.urls?.regular || r.urls?.full,
@@ -74,7 +74,7 @@ export async function GET(req: NextRequest) {
       });
     }
 
-    if (source === 'pexels') {
+    if (source === "pexels") {
       type PexelsPhoto = {
         id: number;
         width?: number;
@@ -93,15 +93,15 @@ export async function GET(req: NextRequest) {
         total_results?: number;
         photos?: PexelsPhoto[];
       };
-      const apiUrl = new URL('https://api.pexels.com/v1/search');
-      apiUrl.searchParams.set('query', `${q}`);
-      apiUrl.searchParams.set('per_page', String(perPage));
-      apiUrl.searchParams.set('page', String(page));
+      const apiUrl = new URL("https://api.pexels.com/v1/search");
+      apiUrl.searchParams.set("query", `${q}`);
+      apiUrl.searchParams.set("per_page", String(perPage));
+      apiUrl.searchParams.set("page", String(page));
 
       const auth = process.env.PEXELS_API_KEY;
       if (!auth) {
         return NextResponse.json(
-          { error: 'Pexels API key not configured' },
+          { error: "Pexels API key not configured" },
           { status: 500 }
         );
       }
@@ -112,7 +112,7 @@ export async function GET(req: NextRequest) {
       });
       if (!res.ok) {
         return NextResponse.json(
-          { error: 'Failed to fetch from Pexels' },
+          { error: "Failed to fetch from Pexels" },
           { status: 502 }
         );
       }
@@ -120,10 +120,10 @@ export async function GET(req: NextRequest) {
       const photos = Array.isArray(data?.photos) ? data.photos! : [];
       const hits = photos.map((p) => ({
         id: String(p.id),
-        tags: p.alt || 'photo',
-        previewURL: p.src?.tiny || p.src?.small || '',
-        webformatURL: p.src?.medium || p.src?.large || '',
-        largeImageURL: p.src?.large2x || p.src?.original || p.src?.large || '',
+        tags: p.alt || "photo",
+        previewURL: p.src?.tiny || p.src?.small || "",
+        webformatURL: p.src?.medium || p.src?.large || "",
+        largeImageURL: p.src?.large2x || p.src?.original || p.src?.large || "",
         imageWidth: p.width,
         imageHeight: p.height,
       }));
@@ -150,20 +150,20 @@ export async function GET(req: NextRequest) {
       hits?: PixabayHit[];
     };
     const pixabayKey =
-      process.env.PIXABAY_KEY || '52178983-3a234cae41feb4b22280b11e3';
-    const apiUrl = new URL('https://pixabay.com/api/');
-    apiUrl.searchParams.set('key', pixabayKey);
-    apiUrl.searchParams.set('q', `destination+${q}`);
+      process.env.PIXABAY_KEY || "52178983-3a234cae41feb4b22280b11e3";
+    const apiUrl = new URL("https://pixabay.com/api/");
+    apiUrl.searchParams.set("key", pixabayKey);
+    apiUrl.searchParams.set("q", `destination+${q}`);
     // apiUrl.searchParams.set('image_type', 'photo');
     // apiUrl.searchParams.set('orientation', 'horizontal');
     // apiUrl.searchParams.set('safesearch', 'true');
-    apiUrl.searchParams.set('per_page', String(perPage));
-    apiUrl.searchParams.set('page', String(page));
+    apiUrl.searchParams.set("per_page", String(perPage));
+    apiUrl.searchParams.set("page", String(page));
 
     const res = await fetch(apiUrl.toString(), { next: { revalidate: 0 } });
     if (!res.ok) {
       return NextResponse.json(
-        { error: 'Failed to fetch from Pixabay' },
+        { error: "Failed to fetch from Pixabay" },
         { status: 502 }
       );
     }
@@ -185,6 +185,6 @@ export async function GET(req: NextRequest) {
       hits,
     });
   } catch {
-    return NextResponse.json({ error: 'Unexpected error' }, { status: 500 });
+    return NextResponse.json({ error: "Unexpected error" }, { status: 500 });
   }
 }

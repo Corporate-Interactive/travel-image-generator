@@ -1,91 +1,396 @@
 city,country,type,filename
-London,United Kingdom,City,london-united-kingdom-3078109.jpg
-Edinburgh,United Kingdom,City,edinburgh-united-kingdom-2203648.jpg
-Glasgow,United Kingdom,City,glasgow-united-kingdom-540122.jpg
-Manchester,United Kingdom,City,manchester-united-kingdom-ZBUzVdKXPPc.jpg
-Liverpool,United Kingdom,City,liverpool-united-kingdom-24770186.jpeg
-Belfast,United Kingdom (Northern Ireland),City,belfast-united-kingdom-northern-ireland-VthAUvA50Eg.jpg
-Derry (Londonderry),United Kingdom (Northern Ireland),City,derry-londonderry-united-kingdom-northern-ireland-2881410.jpeg
-Bath,United Kingdom,City,bath-united-kingdom-4577642.jpeg
-York,United Kingdom,City,
-Cambridge,United Kingdom,City,
-Oxford,United Kingdom,City,
-Brighton,United Kingdom,City,
-Bournemouth,United Kingdom,City,bournemouth-united-kingdom-6094098.jpg
-Blackpool,United Kingdom,City,
-St Ives,United Kingdom (Cornwall),City,
-Newquay,United Kingdom (Cornwall),City,newquay-united-kingdom-cornwall-1599303.jpg
-Isle of Wight,United Kingdom,Island,
-Isle of Skye,United Kingdom,Island,
-Scottish Highlands,United Kingdom,Region,scottish-highlands-united-kingdom-2644504.jpg
-Lake District,United Kingdom,Region,
-Dublin,Ireland,City,dublin-ireland-5272365.jpg
-Cork,Ireland,City,
-Galway,Ireland,City,galway-ireland-3480774.jpg
-Killarney,Ireland,City,killarney-ireland-4975383.jpg
-Berlin,Germany,City,berlin-germany-4468570.jpg
-Munich,Germany,City,munich-germany-2612203.jpg
-Hamburg,Germany,City,hamburg-germany-839523.jpg
-Cologne,Germany,City,cologne-germany-635076.jpg
-Frankfurt,Germany,City,
-Garmisch-Partenkirchen,Germany,City,
-Amsterdam,Netherlands,City,
-Rotterdam,Netherlands,City,
-The Hague,Netherlands,City,
-Brussels,Belgium,City,
-Bruges,Belgium,City,
-Antwerp,Belgium,City,
-Prague,Czech Republic,City,
-Budapest,Hungary,City,
-Krakow,Poland,City,
+Paris,France,City,paris-france-4011964.jpg
+Nice,France,City,nice-france-1538147.jpg
+Lyon,France,City,lyon-france-1687781.jpg
+Bordeaux,France,City, bordeaux-france-9938007.jpg
+Marseille,France,City,marseille-france-5019130.jpg
+Cannes,France,City,cannes-france-6069497.jpg
+Strasbourg,France,City,strasbourg-france-836211.jpg
+Ajaccio,France (Corsica),Island,
+Bastia,France (Corsica),Island,
+Rome,Italy,City,rome-italy-2459675.jpg
+Venice,Italy,City,venice-italy-5767940.jpg
+Florence,Italy,City,florence-italy-5736572.jpg
+Milan,Italy,City,milan-italy-3523720.jpg
+Naples,Italy,City,naples-italy-2746506.jpg
+Verona,Italy,City,verona-italy-2612758.jpg
+Pisa,Italy,City,pisa-italy-1056568.jpg
+Bologna,Italy,City,Bologna-taly-blgna1.jpg
+Turin,Italy,City, Turin-Italy-lL36UC2ghoI.jpg
+Cagliari,Italy (Sardinia),Island, Cagliari-Italy-33827790.jpg
+Olbia,Italy (Sardinia),Island, olbia-Italy-33786362.jpg
+Palermo,Italy (Sicily),Island,
+Catania,Italy (Sicily),Island, Catania-ItalyEKayVii82I.jpg
+Taormina,Italy (Sicily),Island,taormina-italy-sicily-2476286.jpg
+Madrid,Spain,City,madrid-spain-2749858.jpg
+Barcelona,Spain,City,barcelona-spain-2067989.jpg
+Valencia,Spain,City,valencia-spain-5742521.jpg
+Seville,Spain,City,seville-spain-6464281.jpg
+Granada,Spain,City,granada-spain-94157.jpg
+Bilbao,Spain,City,
+San Sebastián,Spain,City,san-sebastian-spain-5730208.jpg
+Palma de Mallorca,Spain (Balearic Islands),Island,palma-de-mallorca-spain-balearic-islands-2246507.jpg
+Ibiza,Spain (Balearic Islands),Island,
+Menorca,Spain (Balearic Islands),Island,
+Tenerife,Spain (Canary Islands),Island,
+Gran Canaria,Spain (Canary Islands),Island,gran-canaria-spain-canary-islands-5026508.jpg
+Lanzarote,Spain (Canary Islands),Island,
+Fuerteventura,Spain (Canary Islands),Island,fuerteventura-spain-canary-islands-458917.jpg
+Lisbon,Portugal,City,lisbon-portugal-2650096.jpg
+Porto,Portugal,City,porto-portugal-7965554.jpg
+Coimbra,Portugal,City,
+Faro,Portugal,City,
+Funchal,Portugal (Madeira),Island,
+Ponta Delgada,Portugal (Azores),Island,
+Athens,Greece,City,athens-greece-6971467.jpg
+Thessaloniki,Greece,City,
+Santorini,Greece,Island,santorini-greece-416136.jpg
+Mykonos,Greece,Island,mykonos-greece-376364.jpg
+Rhodes,Greece,Island,rhodes-greece-7152359.jpg
+Heraklion,Greece (Crete),Island,heraklion-greece-crete-2800177.jpg
+Chania,Greece (Crete),Island,
+Corfu,Greece,Island,corfu-greece-1370502.jpg
+Zakynthos,Greece,Island,zakynthos-greece-5573211.jpg
+Naxos,Greece,Island,naxos-greece-1289084.jpg
+Paros,Greece,Island,
+Kos,Greece,Island,
+Dubrovnik,Croatia,City,dubrovnik-croatia-7083151.jpg
+Split,Croatia,City,split-croatia-1585464.jpg
+Hvar,Croatia,Island,
+Korčula,Croatia,Island,
+Zadar,Croatia,City,
+Istanbul,Turkey,City,istanbul-turkey-1057113.jpg
+Bodrum,Turkey,City,
+Antalya,Turkey,City,antalya-turkey-73890.jpg
+Izmir,Turkey,City,
+Valletta,Malta,Island,valletta-malta-485321.jpg
+Gozo,Malta,Island,gozo-malta-3002239.jpg
+Nicosia,Cyprus,City,
+Limassol,Cyprus,City,limassol-cyprus-6981304.jpg
+Paphos,Cyprus,City,paphos-cyprus-6986799.jpg
+Ayia Napa,Cyprus,City,ayia-napa-cyprus-7079231.jpg
+Reykjavik,Iceland,City,reykjavik-iceland-944592.jpg
+Akureyri,Iceland,City,
+Vik,Iceland,City,
+Tokyo,Japan,City,tokyo-japan-881355.jpg
+Kyoto,Japan,City,kyoto-japan-2475666.jpg
+Osaka,Japan,City,osaka-japan-5572289.jpg
+Hiroshima,Japan,City,hiroshima-japan-5600150.jpg
+Sapporo,Japan,City,sapporo-japan-2662586.jpg
+Naha,Japan (Okinawa),Island,
+Miyakojima,Japan (Okinawa),Island,
+Ishigaki,Japan (Okinawa),Island,
+Bangkok,Thailand,City,bangkok-thailand-7425079.jpg
+Chiang Mai,Thailand,City,chiang-mai-thailand-1550752.jpg
+Chiang Rai,Thailand,City,chiang-rai-thailand-1822484.jpg
+Phuket,Thailand,Island,phuket-thailand-1451382.jpg
+Koh Samui,Thailand,Island,koh-samui-thailand-1658583.jpg
+Krabi,Thailand,Island,krabi-thailand-4831352.jpg
+Koh Phi Phi,Thailand,Island,koh-phi-phi-thailand-2306767.jpg
+Koh Tao,Thailand,Island,
+Koh Phangan,Thailand,Island,
+Bali,Indonesia,Island,bali-indonesia-200295.jpg
+Lombok,Indonesia,Island,lombok-indonesia-7114297.jpg
+Gili Islands,Indonesia,Island,
+Komodo Island,Indonesia,Island,
+Jakarta,Indonesia,City,jakarta-indonesia-5193927.jpg
+Yogyakarta,Indonesia,City,yogyakarta-indonesia-6089719.jpg
+Kuala Lumpur,Malaysia,City,kuala-lumpur-malaysia-911580.jpg
+Langkawi,Malaysia,Island,langkawi-malaysia-3711511.jpg
+Penang,Malaysia,Island,penang-malaysia-2794537.jpg
+Perhentian Islands,Malaysia,Island,
+Tioman Island,Malaysia,Island,
+Manila,Philippines,City,manila-philippines-4951855.jpg
+Cebu,Philippines,City,
+Boracay,Philippines,Island,boracay-philippines-2065643.jpg
+Palawan (El Nido),Philippines,Island,
+Palawan (Coron),Philippines,Island,
+Bohol,Philippines,Island,bohol-philippines-9116185.png
+Siargao,Philippines,Island,siargao-philippines-5606067.jpg
+Hanoi,Vietnam,City,hanoi-vietnam-599202.jpg
+Ho Chi Minh City,Vietnam,City,ho-chi-minh-city-vietnam-2419454.jpg
+Da Nang,Vietnam,City,da-nang-vietnam-547271.jpg
+Hoi An,Vietnam,City,hoi-an-vietnam-547271.jpg
+Ha Long Bay,Vietnam,Island,ha-long-bay-vietnam-4070163.jpg
+Phu Quoc Island,Vietnam,Island,phu-quoc-island-vietnam-3058741.jpg
+Nha Trang,Vietnam,City,nha-trang-vietnam-3039567.jpg
+Beijing,China,City,beijing-china-746576.jpg
+Shanghai,China,City,shanghai-china-3925082.jpg
+Xi’an,China,City,
+Chengdu,China,City,
+Hong Kong,China,City,hong-kong-china-2612866.jpg
+Macau,China,City,
+Sanya,China (Hainan Island),Island,
+Delhi,India,City,delhi-india-4780852.jpg
+Mumbai,India,City,mumbai-india-2429648.jpg
+Jaipur,India,City,jaipur-india-2336946.jpg
+Agra,India,City,agra-india-379667.jpg
+Goa,India,City,goa-india-5827007.jpg
+Kerala (Cochin),India,City,
+Andaman Islands,India,Island,
+Colombo,Sri Lanka,City,colombo-sri-lanka-5061995.jpg
+Kandy,Sri Lanka,City,kandy-sri-lanka-204803.jpg
+Galle,Sri Lanka,City,galle-sri-lanka-7145940.jpg
+Ella,Sri Lanka,City,
+Sigiriya,Sri Lanka,City,sigiriya-sri-lanka-5200034.jpg
+Mirissa,Sri Lanka,City,
+Jaffna,Sri Lanka,City,
+Malé,Maldives,Island,
+North Malé Atoll,Maldives,Island,
+Baa Atoll,Maldives,Island,
+Singapore,Singapore,City,singapore-singapore-5653556.jpg
+Seoul,South Korea,City,seoul-south-korea-8403808.jpg
+Busan,South Korea,City,busan-south-korea-5428144.jpg
+Jeju Island,South Korea,Island,
+Sydney,Australia,City,sydney-australia-4670527.jpg
+Melbourne,Australia,City,melbourne-australia-2262233.jpg
+Brisbane,Australia,City,brisbane-australia-3066557.jpg
+Perth,Australia,City,
+Adelaide,Australia,City,adelaide-australia-2436960.jpg
+Hobart,Australia,City,
+Cairns,Australia,City,
+Darwin,Australia,City,
+Whitsundays,Australia,Island,
+Hamilton Island,Australia,Island,
+Gold Coast,Australia,City,gold-coast-australia-1216988.jpg
+Auckland,New Zealand,City,auckland-new-zealand-4495127.jpg
+Wellington,New Zealand,City,
+Christchurch,New Zealand,City,
+Queenstown,New Zealand,City,queenstown-new-zealand-2156117.jpg
+Rotorua,New Zealand,City,rotorua-new-zealand-2128937.jpg
+Milford Sound,New Zealand,City,
+Bay of Islands,New Zealand,City,bay-of-islands-new-zealand-1675778.jpg
+Nadi,Fiji,City,
+Suva,Fiji,City,
+Denarau,Fiji,Island,
+Yasawa Islands,Fiji,Island,
+Mamanuca Islands,Fiji,Island,
+Tahiti (Papeete),French Polynesia,Island,
+Bora Bora,French Polynesia,Island,bora-bora-french-polynesia-680010.jpg
+Moorea,French Polynesia,Island,moorea-french-polynesia-5790006.jpg
+Rangiroa,French Polynesia,Island,
+Honolulu (Oahu),"Hawaii, USA",Island,
+Maui,"Hawaii, USA",Island,
+Kauai,"Hawaii, USA",Island,
+Hilo,"Hawaii, USA (Big Island)",Island,
+Kona,"Hawaii, USA (Big Island)",Island,
+Rarotonga,Cook Islands,Island,
+Aitutaki,Cook Islands,Island,
+Apia,Samoa,City,
+Savai’i,Samoa,Island,
+Nuku’alofa,Tonga,City,
+Vava’u,Tonga,Island,
+Nouméa,New Caledonia,City,
+Isle of Pines,New Caledonia,Island,
+Port Vila,Vanuatu,City,
+Espiritu Santo,Vanuatu,Island,
+Tumon,Guam,City,
+Hagåtña,Guam,City,
+Koror,Palau,City,
+Rock Islands,Palau,Island,rock-islands-palau-175137.jpg
+Chuuk,Micronesia,Island,
+Pohnpei,Micronesia,Island,
+Yap,Micronesia,Island,
+Majuro,Marshall Islands,City,
+Bikini Atoll,Marshall Islands,Island,
+Bergen,Norway,City,
+Tromsø,Norway,City,
+Faroe Islands,Denmark,Island,
+Shetland Islands,UK,Island,
+Madeira,Portugal,Island,madeira-portugal-2013387.jpg
+Azores (São Miguel),Portugal,Island,
+Riga,Latvia,City,riga-latvia-4697835.jpg
+Tallinn,Estonia,City,tallinn-estonia-1710294.jpg
+Helsinki,Finland,City,helsinki-finland-3006797.jpg
+Stockholm,Sweden,City,stockholm-sweden-3177040.jpg
+Oslo,Norway,City,
+Santander,Spain,City,
+Ibiza Town,Spain,Island,
+Mykonos Town,Greece,Island,
+Patmos,Greece,Island,
+Penang Island,Malaysia,Island,
+Siem Reap,Cambodia,City,siem-reap-cambodia-250295.jpg
+Phnom Penh,Cambodia,City,phnom-penh-cambodia-99634.jpg
+Luang Prabang,Laos,City,
+Vientiane,Laos,City,vientiane-laos-5111579.jpg
+Yangon,Myanmar,City,yangon-myanmar-1731194.jpg
+Bagan,Myanmar,City,bagan-myanmar-1955982.jpg
+Palawan (Puerto Princesa),Philippines,Island,
+Camiguin,Philippines,Island,
+Jeju City,South Korea,Island,
+Nikko,Japan,City,
+Hakone,Japan,City,
+Mo’orea,French Polynesia,Island,
+Huahine,French Polynesia,Island,
+Bora Bora,French Polynesia,Island,
+Palau (Babeldaob),Palau,Island,
+Chuuk Lagoon,Micronesia,Island,
+Majuro Atoll,Marshall Islands,Island,
+Quebec City,Canada,City,quebec-city-canada-815376.jpg
+Montreal,Canada,City,montreal-canada-5843264.jpg
+Vancouver,Canada,City,vancouver-canada-2749395.jpg
+Boston,USA,City,boston-usa-1934667.jpg
+"Washington, D.C.",USA,City,
+San Diego,USA,City,
+Orlando,USA,City,orlando-usa-2839720.jpg
+Las Vegas,USA,City,las-vegas-usa-959085.jpg
+Rio de Janeiro,Brazil,City,rio-de-janeiro-brazil-4183806.jpg
+São Paulo,Brazil,City,sao-paulo-brazil-4923620.jpg
+Buenos Aires,Argentina,City,buenos-aires-argentina-240952.jpg
+Lima,Peru,City,lima-peru-4713822.jpg
+Cusco,Peru,City,cusco-peru-2655339.jpg
+Cartagena,Colombia,City,cartagena-colombia-4788526.jpg
+Zanzibar,Tanzania,Island,zanzibar-tanzania-1552362.jpg
+Stone Town,"Zanzibar, Tanzania",City,
+Marrakech Medina,Morocco,City,
+Essaouira,Morocco,City,
+Victoria,Seychelles,City,
+Mahe Island,Seychelles,Island,
+Praslin Island,Seychelles,Island,
+Nosy Be,Madagascar,Island,
+Kabul,Afghanistan,City,
+Tirana,Albania,City,
+Algiers,Algeria,City,
+Andorra la Vella,Andorra,City,
+Luanda,Angola,City,
+St. John's,Antigua and Barbuda,City,
+Yerevan,Armenia,City,
+Vienna,Austria,City,vienna-austria-933500.jpg
+Baku,Azerbaijan,City,
 Nassau,Bahamas,City,
-Grand Bahama,Bahamas,Island,
-Montego Bay,Jamaica,City,
-Negril,Jamaica,City,
-Punta Cana,Dominican Republic,City,
-Santo Domingo,Dominican Republic,City,
-San Juan,Puerto Rico,City,
-Aruba,Aruba,Island,
-Barbados,Barbados,Island,
-Saint Lucia,Saint Lucia,Island,
-Antigua,Antigua and Barbuda,Island,
-Grenada,Grenada,Island,
-Cancún,Mexico,City,
-Playa del Carmen,Mexico,City,
-Tulum,Mexico,City,
-Cabo San Lucas,Mexico,City,
-New York City,USA,City,
-Los Angeles,USA,City,
-San Francisco,USA,City,
-Miami,USA,City,
-New Orleans,USA,City,
-Chicago,USA,City,
-Dubai,United Arab Emirates,City,
-Abu Dhabi,United Arab Emirates,City,
-Doha,Qatar,City,
-Tel Aviv,Israel,City,
-Jerusalem,Israel,City,
-Cairo,Egypt,City,
-Sharm el-Sheikh,Egypt,City,
-Hurghada,Egypt,City,
-Petra,Jordan,Region,
-Aqaba,Jordan,City,
-Cape Town,South Africa,City,
-Johannesburg,South Africa,City,
-Kruger National Park,South Africa,Region,
-Mauritius,Mauritius,Island,
-Sal (Cape Verde),Cabo Verde,Island,
-San José,Costa Rica,City,
-Tamarindo,Costa Rica,City,
-Manuel Antonio,Costa Rica,Region,
-San Pedro,Belize (Ambergris Caye),City,
-Bocas del Toro,Panama,Region,
-Panama City,Panama,City,
-Mombasa,Kenya,City,
-Diani Beach,Kenya,Region,
-Quito,Ecuador,City,
-Galápagos Islands,Ecuador,Island,
-Machu Picchu,Peru,Region,
+Manama,Bahrain,City,
+Dhaka,Bangladesh,City,
+Bridgetown,Barbados,City,
+Minsk,Belarus,City,
+Brussels,Belgium,City,brussels-belgium-108119.jpg
+Belmopan,Belize,City,
+Porto-Novo,Benin,City,
+Thimphu,Bhutan,City,thimphu-bhutan-6737217.jpg
+La Paz,Bolivia,City,
+Sarajevo,Bosnia and Herzegovina,City,sarajevo-bosnia-and-herzegovina-2259911.jpg
+Gaborone,Botswana,City,
+Bandar Seri Begawan,Brunei,City,
+Sofia,Bulgaria,City,sofia-bulgaria-2538730.jpg
+Ouagadougou,Burkina Faso,City,
+Gitega,Burundi,City,
+Praia,Cabo Verde,City,
+Yaoundé,Cameroon,City,
+Bangui,Central African Republic,City,
+N'Djamena,Chad,City,
 Santiago,Chile,City,
-Patagonia,Chile/Argentina,Region,
-Cancún,Mexico,City,
+Moroni,Comoros,City,
+Brazzaville,Congo,City,
+San José,Costa Rica,City,
+Havana,Cuba,City,havana-cuba-2662037.jpg
+Prague,Czechia,City,prague-czechia-3948308.jpg
+Kinshasa,Democratic Republic of the Congo,City,
+Djibouti,Djibouti,City,
+Roseau,Dominica,City,
+Santo Domingo,Dominican Republic,City,
+Quito,Ecuador,City,
+Cairo,Egypt,City,
+San Salvador,El Salvador,City,
+Malabo,Equatorial Guinea,City,
+Asmara,Eritrea,City,
+Mbabane,Eswatini,City,
+Addis Ababa,Ethiopia,City,
+Libreville,Gabon,City,
+Banjul,Gambia,City,
+Tbilisi,Georgia,City,
+Berlin,Germany,City,
+Accra,Ghana,City,
+St. George's,Grenada,City,
+Guatemala City,Guatemala,City,
+Conakry,Guinea,City,
+Bissau,Guinea-Bissau,City,
+Georgetown,Guyana,City,
+Port-au-Prince,Haiti,City,
+Tegucigalpa,Honduras,City,
+Budapest,Hungary,City,
+Tehran,Iran,City,
+Baghdad,Iraq,City,
+Dublin,Ireland,City,dublin-ireland-4603885.jpg
+Jerusalem,Israel,City,jerusalem-israel-4592574.jpg
+Kingston,Jamaica,City,
+Amman,Jordan,City,
+Astana,Kazakhstan,City,
+Nairobi,Kenya,City,nairobi-kenya-2290103.jpg
+South Tarawa,Kiribati,City,
+Kuwait City,Kuwait,City,
+Bishkek,Kyrgyzstan,City,
+Beirut,Lebanon,City,
+Maseru,Lesotho,City,
+Monrovia,Liberia,City,
+Tripoli,Libya,City,
+Vaduz,Liechtenstein,City,
+Vilnius,Lithuania,City,vilnius-lithuania-5673217.jpg
+Luxembourg,Luxembourg,City,luxembourg-luxembourg-7050261.jpg
+Lilongwe,Malawi,City,
+Bamako,Mali,City,
+Nouakchott,Mauritania,City,
+Port Louis,Mauritius,City,
+Mexico City,Mexico,City,mexico-city-mexico-5838206.jpg
+Chișinău,Moldova,City,
+Monaco,Monaco,City,monaco-monaco-6145832.jpg
+Ulaanbaatar,Mongolia,City,
+Podgorica,Montenegro,City,
+Maputo,Mozambique,City,
+Windhoek,Namibia,City,
+Yaren,Nauru,City,
+Kathmandu,Nepal,City,kathmandu-nepal-2753720.jpg
+Amsterdam,Netherlands,City,amsterdam-netherlands-5934192.jpg
+Managua,Nicaragua,City,
+Niamey,Niger,City,
+Abuja,Nigeria,City,
+Pyongyang,North Korea,City,
+Skopje,North Macedonia,City,
+Muscat,Oman,City,muscat-oman-5581956.jpg
+Islamabad,Pakistan,City,islamabad-pakistan-6880581.jpg
+Ramallah,Palestine,City,
+Panama City,Panama,City,
+Port Moresby,Papua New Guinea,City,
+Asunción,Paraguay,City,
+Warsaw,Poland,City,warsaw-poland-616346.jpg
+Doha,Qatar,City,
+Bucharest,Romania,City,bucharest-romania-1876059.jpg
+Moscow,Russia,City,moscow-russia-4548935.jpg
+Kigali,Rwanda,City,
+Basseterre,Saint Kitts and Nevis,City,
+Castries,Saint Lucia,City,
+Kingstown,Saint Vincent and the Grenadines,City,
+San Marino,San Marino,City,san-marino-san-marino-945651.jpg
+São Tomé,Sao Tome and Principe,City,
+Riyadh,Saudi Arabia,City,
+Dakar,Senegal,City,
+Belgrade,Serbia,City,belgrade-serbia-5686497.jpg
+Freetown,Sierra Leone,City,
+Bratislava,Slovakia,City,
+Ljubljana,Slovenia,City,
+Honiara,Solomon Islands,City,
+Mogadishu,Somalia,City,
+Pretoria,South Africa,City,
+Juba,South Sudan,City,
+Khartoum,Sudan,City,
+Paramaribo,Suriname,City,
+Bern,Switzerland,City,
+Damascus,Syria,City,
+Taipei,Taiwan,City,
+Dushanbe,Tajikistan,City,
+Dili,Timor-Leste,City,
+Lomé,Togo,City,
+Port of Spain,Trinidad and Tobago,City,
+Tunis,Tunisia,City,
+Ashgabat,Turkmenistan,City,
+Funafuti,Tuvalu,City,
+Kampala,Uganda,City,
+Kyiv,Ukraine,City,
+Abu Dhabi,United Arab Emirates,City,
+London,United Kingdom,City,
+"Washington, D.C.",United States,City,
+Montevideo,Uruguay,City,
+Tashkent,Uzbekistan,City,
+Vatican City,Vatican City,City,
+Caracas,Venezuela,City,
+Sana'a,Yemen,City,
+Lusaka,Zambia,City,
+Harare,Zimbabwe,City,
