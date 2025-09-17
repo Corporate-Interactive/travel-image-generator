@@ -41,7 +41,7 @@ export default async function Home() {
   const incomplete = locations.filter((l) => !l.filename);
   return (
     <div className="font-sans min-h-screen p-8 sm:p-12">
-      <div className="max-w-5xl mx-auto flex flex-col gap-6">
+      <div className="mx-auto flex flex-col gap-6 ">
         <h1 className="text-2xl font-semibold tracking-tight">
           Travel Image Downloader
         </h1>

@@ -161,7 +161,7 @@ export default function ImagePicker({ locations }: Props) {
   }
 
   return (
-    <div className="w-full max-w-5xl mx-auto flex flex-col gap-6">
+    <div className="w-full mx-auto flex flex-col gap-6">
       <div className="flex items-end justify-between">
         <div>
           <p className="text-xs uppercase tracking-wide text-foreground/60">
@@ -229,7 +229,7 @@ export default function ImagePicker({ locations }: Props) {
               <img
                 src={img.webformatURL || img.previewURL}
                 alt={img.tags}
-                className="w-full h-36 object-cover transition-transform duration-200 ease-out group-hover:scale-[1.03]"
+                className="w-full h-56 object-cover transition-transform duration-200 ease-out group-hover:scale-[1.03]"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition" />
