@@ -76,7 +76,7 @@ export default function ImagePicker({ locations }: Props) {
     const city = selectedLocation.city ?? "";
     const country = selectedLocation.country ?? "";
     return `${city} ${country}`.trim();
-    // return `placeholder image`.trim();
+
   }, [selectedLocation]);
 
   // When the filter changes, reset the index
