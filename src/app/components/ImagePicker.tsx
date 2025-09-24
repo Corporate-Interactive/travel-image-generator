@@ -75,7 +75,7 @@ export default function ImagePicker({ locations }: Props) {
     if (!selectedLocation) return "";
     const city = selectedLocation.city ?? "";
     const country = selectedLocation.country ?? "";
-    return `${city} ${country}`.trim();
+    return `${country}`.trim();
 
   }, [selectedLocation]);
 
