@@ -42,13 +42,33 @@ export default function ImagePicker({ locations }: Props) {
   const [source, setSource] = useState<"pixabay" | "unsplash" | "pexels">(
     "pixabay"
   );
+  const [startLetter, setStartLetter] = useState<string | null>(null);
 
   const [actionState, formAction, isPending] = useActionState<
     ActionState,
     FormData
   >(downloadImageAndUpdateCsv, { status: "idle" });
 
-  const selectedLocation = locations[locationIndex];
+  const letters = useMemo(
+    () => Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i)),
+    []
+  );
+  const availableLetters = useMemo(() => {
+    const set = new Set<string>();
+    for (const loc of locations) {
+      const c = (loc.country || "").trim();
+      if (c) set.add(c[0]!.toUpperCase());
+    }
+    return set;
+  }, [locations]);
+  const filteredLocations = useMemo(() => {
+    if (!startLetter) return locations;
+    const letter = startLetter.toUpperCase();
+    return locations.filter((l) =>
+      (l.country || "").trim().toUpperCase().startsWith(letter)
+    );
+  }, [locations, startLetter]);
+  const selectedLocation = filteredLocations[locationIndex];
   const isDone = !selectedLocation;
 
   const query = useMemo(() => {
@@ -58,6 +78,11 @@ export default function ImagePicker({ locations }: Props) {
     return `${city} ${country}`.trim();
     // return `placeholder image`.trim();
   }, [selectedLocation]);
+
+  // When the filter changes, reset the index
+  useEffect(() => {
+    setLocationIndex(0);
+  }, [startLetter]);
 
   // Reset pagination and seen IDs when the location (query) changes
   useEffect(() => {
@@ -150,6 +175,15 @@ export default function ImagePicker({ locations }: Props) {
     setRefreshing(true);
     setPageNum((p) => p + 1);
   }
+  if (isDone && locations.length > 0 && filteredLocations.length === 0) {
+    return (
+      <div className="w-full max-w-5xl mx-auto flex flex-col items-center gap-4 py-12 text-center">
+        <h2 className="text-xl font-semibold">No countries match this letter</h2>
+        <p className="text-sm text-foreground/80">Try a different letter or clear the filter.</p>
+      </div>
+    );
+  }
+
   if (isDone) {
     return (
       <div className="w-full max-w-5xl mx-auto flex flex-col items-center gap-4 py-12 text-center">
@@ -163,18 +197,55 @@ export default function ImagePicker({ locations }: Props) {
 
   return (
     <div className="w-full mx-auto flex flex-col gap-6">
+      {/* Letter selector */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="text-xs uppercase tracking-wide text-foreground/60">Start with</span>
+          <button
+            type="button"
+            onClick={() => setStartLetter(null)}
+            disabled={isPending || loading || refreshing}
+            className={`rounded border px-2 py-1 text-xs ${startLetter === null ? "border-foreground bg-black/5 dark:bg-white/10" : "border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5"}`}
+          >
+            All
+          </button>
+          {letters.map((ch) => {
+            const hasAny = availableLetters.has(ch);
+            const active = startLetter === ch;
+            return (
+              <button
+                key={ch}
+                type="button"
+                onClick={() => setStartLetter(ch)}
+                disabled={!hasAny || isPending || loading || refreshing}
+                className={`rounded border px-2 py-1 text-xs ${active ? "border-foreground bg-black/5 dark:bg-white/10" : "border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5"} ${!hasAny ? "opacity-40 cursor-not-allowed" : ""}`}
+                title={hasAny ? `Countries starting with ${ch}` : `No countries with ${ch}`}
+              >
+                {ch}
+              </button>
+            );
+          })}
+        </div>
+        <div className="text-sm text-foreground/70">
+          {Math.min(locationIndex + 1, Math.max(filteredLocations.length, 1))} / {filteredLocations.length}
+        </div>
+      </div>
       <div className="flex items-end justify-between">
         <div>
           <p className="text-xs uppercase tracking-wide text-foreground/60">
             Location
           </p>
-          <h2 className="text-lg font-medium">
-            {selectedLocation.city}, {selectedLocation.country}
-          </h2>
+          {selectedLocation ? (
+            <h2 className="text-lg font-medium">
+              {selectedLocation.city}, {selectedLocation.country}
+            </h2>
+          ) : (
+            <h2 className="text-lg font-medium text-foreground/70">
+              {startLetter ? `No locations starting with "${startLetter}"` : "Select a location"}
+            </h2>
+          )}
         </div>
-        <div className="text-sm text-foreground/70">
-          {locationIndex + 1} / {locations.length}
-        </div>
+        <div className="text-sm text-foreground/70" />
       </div>
 
       <div className="flex items-center justify-between">
@@ -184,7 +255,7 @@ export default function ImagePicker({ locations }: Props) {
             <label className="text-xs text-foreground/70">Source</label>
             <select
               value={source}
-              disabled={loading || refreshing || isPending}
+              disabled={loading || refreshing || isPending || !selectedLocation}
               onChange={(e) =>
                 setSource(e.target.value as "pixabay" | "unsplash" | "pexels")
               }
@@ -203,7 +274,7 @@ export default function ImagePicker({ locations }: Props) {
           <button
             type="button"
             onClick={handleRefresh}
-            disabled={loading || refreshing || isPending}
+            disabled={loading || refreshing || isPending || !selectedLocation}
             className="rounded border border-black/10 dark:border-white/10 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/5 disabled:opacity-50"
             title="Show more options"
           >
@@ -212,38 +283,44 @@ export default function ImagePicker({ locations }: Props) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4">
-        {images.map((img) => {
-          const isSelected = selectedImage?.id === img.id && isPending;
-          return (
-            <button
-              key={img.id}
-              type="button"
-              onClick={() => handlePick(img)}
-              disabled={isPending}
-              className={`group relative rounded-lg overflow-hidden border transition duration-200 ease-out hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 ${
-                isSelected
-                  ? "border-foreground ring-2 ring-foreground/40"
-                  : "border-black/10 dark:border-white/10"
-              }`}
-            >
-              <img
-                src={img.webformatURL || img.previewURL}
-                alt={img.tags}
-                className="w-full h-56 object-cover transition-transform duration-200 ease-out group-hover:scale-[1.03]"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition" />
-              <div className="absolute bottom-0 left-0 right-0 p-2 flex items-center justify-between text-white text-xs">
-                <span className="truncate">{img.tags}</span>
-                <span className="px-2 py-0.5 rounded bg-white/20 backdrop-blur-sm">
-                  Select
-                </span>
-              </div>
-            </button>
-          );
-        })}
-      </div>
+      {selectedLocation ? (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4">
+          {images.map((img) => {
+            const isSelected = selectedImage?.id === img.id && isPending;
+            return (
+              <button
+                key={img.id}
+                type="button"
+                onClick={() => handlePick(img)}
+                disabled={isPending}
+                className={`group relative rounded-lg overflow-hidden border transition duration-200 ease-out hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 ${
+                  isSelected
+                    ? "border-foreground ring-2 ring-foreground/40"
+                    : "border-black/10 dark:border-white/10"
+                }`}
+              >
+                <img
+                  src={img.webformatURL || img.previewURL}
+                  alt={img.tags}
+                  className="w-full h-56 object-cover transition-transform duration-200 ease-out group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition" />
+                <div className="absolute bottom-0 left-0 right-0 p-2 flex items-center justify-between text-white text-xs">
+                  <span className="truncate">{img.tags}</span>
+                  <span className="px-2 py-0.5 rounded bg-white/20 backdrop-blur-sm">
+                    Select
+                  </span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="rounded border border-black/10 dark:border-white/10 p-4 text-sm text-foreground/70">
+          Choose a different letter or click All to show every country.
+        </div>
+      )}
 
       <div className="flex items-center justify-between">
         {actionState.status === "error" ? (
@@ -259,7 +336,7 @@ export default function ImagePicker({ locations }: Props) {
           <button
             type="button"
             onClick={goNext}
-            disabled={isPending}
+            disabled={isPending || isDone}
             className="rounded border border-black/10 dark:border-white/10 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/5"
           >
             Skip
