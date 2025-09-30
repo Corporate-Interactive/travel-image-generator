@@ -542,7 +542,7 @@ Santa Cruz de la Sierra,Bolivia,,santa-cruz-de-la-sierra-bolivia-jc2xrKLX80g.jpg
 Potosí,Bolivia,,potosi-bolivia-2613110.jpeg
 Oruro,Bolivia,,oruro-bolivia-C9v6wrKxZZ4.jpg
 Cochabamba,Bolivia,,cochabamba-bolivia-DR0SBTzDTds.jpg
-Kralendijk,"Bonaire, Saint Eustatius and Saba",kralendijk-bonaire-GcQlAZs6-Zw.jpg
+Kralendijk,Bonaire,,kralendijk-bonaire-30728552.jpeg
 Recife,Brazil,,recife-brazil-ztQJni_oQgM.jpg
 Fortaleza,Brazil,,fortaleza-brazil-5770182.jpeg
 Belém,Brazil,,belem-brazil-2013809.jpeg
@@ -1475,7 +1475,7 @@ Gitarama,Rwanda,,gitarama-rwanda-pTWXgnsJSnc.jpg
 Gikongoro,Rwanda,,gikongoro-rwanda-EAXlQuPjlaw.jpg
 Gisenyi,Rwanda,,gisenyi-rwanda-HXiSlKoZf0Q.jpg
 Byumba,Rwanda,,byumba-rwanda-S0nbBx3MbJM.jpg
-Nyanza,Rwanda,
+Nyanza,Rwanda,,nyanza-rwanda-bwZoVPp6mJ4.jpg
 Tabuk,Saudi Arabia,,tabuk-saudi-arabia-GJecKPFlQ5o.jpg
 Najrān,Saudi Arabia,,najran-saudi-arabia-aGwBtbncMWo.jpg
 Makkah,Saudi Arabia,,makkah-saudi-arabia-xuz7rF7GCKI.jpg
@@ -1502,7 +1502,7 @@ Norrköping,Sweden,,norrkoping-sweden-2377432.jpeg
 Malmö,Sweden,,malmo-sweden-1198507.jpeg
 Lund,Sweden,,lund-sweden-1529040.jpeg
 Linköping,Sweden,,linkoping-sweden-2563405.jpeg
-Jönköping,Sweden,
+Jönköping,Sweden,,jonkoping-sweden-TTuZPhlAlf4.jpg
 Helsingborg,Sweden,,helsingborg-sweden-2563405.jpeg
 Göteborg,Sweden,,goteborg-sweden-2563405.jpeg
 Punggol,Singapore,,punggol-singapore-1zI4zJ7V4KQ.jpg
@@ -1556,12 +1556,12 @@ Meerzorg,Suriname,,meerzorg-suriname-6673095.jpeg
 Lelydorp,Suriname,,lelydorp-suriname-6673095.jpeg
 Brokopondo,Suriname,,brokopondo-suriname-6673095.jpeg
 Wau,South Sudan,,wau-south-sudan-25230862.jpeg
-Rumbek,South Sudan,
-Malakal,South Sudan,
-Kuacjok,South Sudan,
-Neves,Sao Tome and Principe,
-Água Izé,Sao Tome and Principe,
-Folha Fede,Sao Tome and Principe,
+Rumbek,South Sudan,,rumbek-south-sudan-13966946.jpeg
+Malakal,South Sudan,,malakal-south-sudan-33763192.jpeg
+Kuacjok,South Sudan,,kuacjok-south-sudan-33763192.jpeg
+Neves,Sao Tome and Principe,,neves-sao-tome-and-principe-803105.jpeg
+Água Izé,Sao Tome and Principe,,agua-ize-sao-tome-and-principe-803106.jpeg
+Folha Fede,Sao Tome and Principe,,folha-fede-sao-tome-and-principe-1122870.jpeg
 Usulután,El Salvador,,usulutan-el-salvador-anCPcwhCQ28.jpg
 Sonsonate,El Salvador,,sonsonate-el-salvador-34009728.jpeg
 San Vicente,El Salvador,,san-vicente-el-salvador-anCPcwhCQ28.jpg
@@ -1569,16 +1569,16 @@ Santa Ana,El Salvador,,santa-ana-el-salvador-anCPcwhCQ28.jpg
 San Miguel,El Salvador,,san-miguel-el-salvador-32730680.jpeg
 Santa Tecla,El Salvador,,santa-tecla-el-salvador-anCPcwhCQ28.jpg
 Cojutepeque,El Salvador,,cojutepeque-el-salvador-anCPcwhCQ28.jpg
-Lower Prince’s Quarter,Sint Maarten,
-Cul de Sac,Sint Maarten,
-Koolbaai,Sint Maarten,
+Lower Prince’s Quarter,Sint Maarten,,lower-princes-quarter-sint-maarten-999094.jpeg
+Cul de Sac,Sint Maarten,,cul-de-sac-sint-maarten-5769701.jpeg
+Koolbaai,Sint Maarten,,koolbaai-sint-maarten-13874238.jpeg
 Ţarţūs,Syria,,tartus-syria-17473528.jpeg
-Homs,Syria,
-Ḩamāh,Syria,
+Homs,Syria,,homs-syria-3743622.jpeg
+Ḩamāh,Syria,,hamah-syria-2610957.jpeg
 Aleppo,Syria,,aleppo-syria-29409463.jpeg
-Deir ez-Zor,Syria,
-Ar Raqqah,Syria,
-Latakia,Syria,
+Deir ez-Zor,Syria,,deir-ez-zor-syria-2610957.jpeg
+Ar Raqqah,Syria,,ar-raqqah-syria-1050748.jpeg
+Latakia,Syria,,latakia-syria-3743622.jpeg
 Siteki,Eswatini,,siteki-eswatini-Ji2NtujyvfA.jpg
 Piggs Peak,Eswatini,,piggs-peak-eswatini-pemDb8kBVpk.jpg
 Nhlangano,Eswatini,,nhlangano-eswatini-33971035.jpeg
@@ -1711,7 +1711,7 @@ Bukhara,Uzbekistan,,bukhara-uzbekistan-K7AmW615IWM.jpg
 Namangan,Uzbekistan,,namangan-uzbekistan-WGV4s_JaS04.jpg
 Fergana,Uzbekistan,,fergana-uzbekistan-bIzBehsGLxI.jpg
 Andijon,Uzbekistan,,andijon-uzbekistan-j-YjOHsZzuY.jpg
-Calliaqua,Saint Vincent and the Grenadines,
+Calliaqua,Saint Vincent and the Grenadines,,calliaqua-saint-vincent-and-the-grenadines-18768977.jpeg
 Maracaibo,Venezuela,,maracaibo-venezuela-16070633.jpeg
 Ciudad Guayana,Venezuela,,ciudad-guayana-venezuela-29535680.jpeg
 Ciudad Bolívar,Venezuela,,ciudad-bolivar-venezuela-29535680.jpeg
@@ -1731,7 +1731,7 @@ Cần Thơ,Vietnam,,can-tho-vietnam-20324700.jpeg
 Biên Hòa,Vietnam,,bien-hoa-vietnam-11045853.jpeg
 Port-Vila,Vanuatu,,port-vila-vanuatu-9482126.jpeg
 Luganville,Vanuatu,,luganville-vanuatu-12921445.jpeg
-Asau,Samoa,
+Asau,Samoa,,asau-samoa-17141800.jpeg
 Ferizaj,Kosovo,,ferizaj-kosovo-MuSRgOUP_oY.jpg
 Suva Reka,Kosovo,,suva-reka-kosovo-Pl9UTOuZIh0.jpg
 Prizren,Kosovo,,prizren-kosovo-e6JQnmKV3dQ.jpg
@@ -1757,13 +1757,13 @@ Emalahleni,South Africa,,emalahleni-south-africa-wkHsJN_AWXc.jpg
 Welkom,South Africa,,welkom-south-africa-2227828.jpeg
 Vereeniging,South Africa,,vereeniging-south-africa-wkHsJN_AWXc.jpg
 Rustenburg,South Africa,,rustenburg-south-africa-wkHsJN_AWXc.jpg
-Port Elizabeth,South Africa,
-Pietermaritzburg,South Africa,
-Johannesburg,South Africa,
-East London,South Africa,
-Durban,South Africa,
-Bloemfontein,South Africa,
-Cape Town,South Africa,
+Port Elizabeth,South Africa,,port-elizabeth-south-africa-259447.jpeg
+Pietermaritzburg,South Africa,,pietermaritzburg-south-africa-136721.jpeg
+Johannesburg,South Africa,,johannesburg-south-africa-29049.jpg
+East London,South Africa,,east-london-south-africa-29049.jpg
+Durban,South Africa,,durban-south-africa-136721.jpeg
+Bloemfontein,South Africa,,bloemfontein-south-africa-136721.jpeg
+Cape Town,South Africa,,cape-town-south-africa-29049.jpg
 Solwezi,Zambia,,solwezi-zambia-1109905.jpeg
 Ndola,Zambia,,ndola-zambia-1430640.jpg
 Livingstone,Zambia,,livingstone-zambia-1430640.jpg
